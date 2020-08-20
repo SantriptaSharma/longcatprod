@@ -36,10 +36,12 @@
         header h1 {
             font-size: 3rem;
             margin-bottom: 0;
+            text-align: center;
         }
 
         header p {
             margin-top: 8px;
+            text-align: center;
         }
 
         main {
@@ -80,6 +82,15 @@
         footer a
         {
             font-weight: 500;
+        }
+
+        @media (max-width: 1100px)
+        {
+            img
+            {
+                top: 50vh;
+                transform: translate(0,-50%);
+            }
         }
     </style>
     <script type="text/javascript">
