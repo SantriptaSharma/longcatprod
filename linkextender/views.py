@@ -26,7 +26,7 @@ def extendlink(req):
             messages.add_message(req, 20, "already exists")
         else:
             ExtendedLink.objects.create(url = req.POST["url"], longlink = ll, segments = segms)
-            messages.add_message(req, 20, f"successfully created <a href = 'http://long-cat.herokuapp.com/{ll}', target = '_blank'>http://long-cat.herokuapp.com/{ll}</a>")
+            messages.add_message(req, 20, f"successfully created http://long-cat.herokuapp.com/{ll}")
     else:
         badReq = True
 
