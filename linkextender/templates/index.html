@@ -142,7 +142,7 @@
             <form action = "/create" method = "POST" id = "theform">
                 {% csrf_token %}
                 <input name = "url" id = "urlfield" type = "url" placeholder = "url" required />
-                <input name = "link" id = "linkfield" type = "text" placeholder = "long link" maxlength = "20" required />
+                <input name = "link" id = "linkfield" type = "text" placeholder = "http://long-cat.herokuapp.com/" maxlength = "20" required />
                 <input name = "segments" type = "number" placeholder = "number of segments" min = "1" max = "50" required />
                 <input type = "submit" value = "do the thing" />
             </form>
