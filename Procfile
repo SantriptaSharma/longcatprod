@@ -1,0 +1,1 @@
+web: gunicorn longcat.wsgi --log-file -
