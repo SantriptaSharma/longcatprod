@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpResponseBadRequest
 from django.contrib import messages
 from .models import ExtendedLink
+from random import randint
 
 # Create your views here.
 def homepage(req):
@@ -45,3 +46,14 @@ def longlinkseg(req, longlink, segno):
         return render(req, "tail.html", {"link": elink.url})
     else:
         return render(req, "segment.html", {"head": False, "segno": segno})
+
+def random(req):
+    qset = ExtendedLink.objects.all()
+    n = qset.count()
+
+    if n > 0:
+        i = randint(0, n-1)
+        return HttpResponseRedirect(f"/{qset[i].longlink}")
+
+    messages.add_message(req, 20, "No cats were found :(")
+    return HttpResponseRedirect("/")
